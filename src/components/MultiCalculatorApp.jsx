@@ -71,10 +71,14 @@ export default function MultiCalculatorApp() {
                     </div>
                 </div>
             </motion.main>
+            
 
             <footer className="text-center text-xs text-slate-500 p-2 bg-white">
                 &copy; 2025 RichCalc. This website does not collect or store any personal data and does not
-                use cookies or tracking technologies.
+                use cookies or tracking technologies. <br />
+                <a href="faq.html" className="text-blue-400 hover:underline">
+                    FAQ
+                </a>
             </footer>
         </div>
     );
