@@ -22,10 +22,10 @@ export default function MultiCalculatorApp() {
                     <div className="bg-white/80 rounded-2xl shadow-2xl backdrop-blur-sm overflow-hidden">
                         <div className="p-6 md:p-8">
                             <h1 className="text-3xl font-bold mb-3 text-slate-900">
-                                PlentiCalc
+                                RichCalc
                             </h1>
                             <p className="text-sm text-slate-700 mb-6">
-                                Welcome to PlentiCalc! Choose either Health or Financial to explore a plentiful variety of calculators, all in one place.
+                                RichCalc is your one-stop destination for a suite of powerful, easy-to-use calculators designed to simplify both financial and health decisions.
                             </p>
 
                             {activeGroup === '' && (
@@ -73,7 +73,7 @@ export default function MultiCalculatorApp() {
             </motion.main>
 
             <footer className="text-center text-xs text-slate-500 p-2 bg-white">
-                This website does not collect or store any personal data and does not
+                &copy; 2025 RichCalc. This website does not collect or store any personal data and does not
                 use cookies or tracking technologies.
             </footer>
         </div>
