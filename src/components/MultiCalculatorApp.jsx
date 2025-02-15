@@ -17,9 +17,9 @@ const MultiCalculatorApp = () => {
     >
       <Card className="max-w-3xl w-full shadow-xl rounded-2xl overflow-hidden">
         <CardContent className="p-6 md:p-8">
-          <h1 className="text-2xl font-bold mb-6">Multi-Calculator</h1>
+          <h1 className="text-2xl font-bold mb-6">PlentiCalc</h1>
  <p className="text-sm text-gray-600 mb-6">
-   Welcome to the Multi-Calculator App! Choose either Health or Financial
+   Welcome to PlentiCalc! Choose either Health or Financial
    to explore a variety of calculators, all in one place.
  </p>          
 <div className="flex gap-4 mb-6">
