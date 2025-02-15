@@ -167,15 +167,15 @@ export default function PaymentCalculator() {
                 <tbody>
                   <tr>
                     <td className="pr-4">Monthly Payment:</td>
-                    <td className="font-medium">${fmt(ftMonthly)}</td>
+                    <td className="text-right font-medium">${fmt(ftMonthly)}</td>
                   </tr>
                   <tr>
                     <td className="pr-4">Total of Payments:</td>
-                    <td className="font-medium">${fmt(ftTotal)}</td>
+                    <td className="text-right font-medium">${fmt(ftTotal)}</td>
                   </tr>
                   <tr>
                     <td className="pr-4">Total Interest:</td>
-                    <td className="font-medium">${fmt(ftInterest)}</td>
+                    <td className="text-right font-medium">${fmt(ftInterest)}</td>
                   </tr>
                 </tbody>
               </table>
@@ -203,7 +203,7 @@ export default function PaymentCalculator() {
               <label className="block mb-1 font-medium">Monthly Payment</label>
               <input
                 type="number"
-                className="w-full border border-gray-300 rounded px-3 py-2"
+                className="text-right w-full border border-gray-300 rounded px-3 py-2"
                 value={monthlyPayFP}
                 onChange={(e) => setMonthlyPayFP(e.target.value)}
               />
@@ -225,17 +225,17 @@ export default function PaymentCalculator() {
                 <tbody>
                   <tr>
                     <td className="pr-4">Payoff Time:</td>
-                    <td className="font-medium">
+                    <td className="text-right font-medium">
                       {fpYrs} years {fpRemainingM} months
                     </td>
                   </tr>
                   <tr>
                     <td className="pr-4">Total of Payments:</td>
-                    <td className="font-medium">${fmt(fpTotal)}</td>
+                    <td className="text-right font-medium">${fmt(fpTotal)}</td>
                   </tr>
                   <tr>
                     <td className="pr-4">Total Interest:</td>
-                    <td className="font-medium">${fmt(fpInterest)}</td>
+                    <td className="text-right font-medium">${fmt(fpInterest)}</td>
                   </tr>
                 </tbody>
               </table>

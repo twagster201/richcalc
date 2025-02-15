@@ -108,27 +108,27 @@ const Mortgage = () => {
                             <tbody>
                                 <tr>
                                     <td className="pr-4">Loan Amount:</td>
-                                    <td className="font-medium">${formatCurrency(principal)}</td>
+                                    <td className="text-right font-medium">${formatCurrency(principal)}</td>
                                 </tr>
                                 <tr>
                                     <td className="pr-4">Down Payment:</td>
-                                    <td className="font-medium">${formatCurrency(dpAmount)}</td>
+                                    <td className="text-right font-medium">${formatCurrency(dpAmount)}</td>
                                 </tr>
                                 <tr>
                                     <td className="pr-4">Monthly Payment:</td>
-                                    <td className="font-medium">${formatCurrency(monthlyPayment)}</td>
+                                    <td className="text-right font-medium">${formatCurrency(monthlyPayment)}</td>
                                 </tr>
                                 <tr>
                                     <td className="pr-4">Total Payments:</td>
-                                    <td className="font-medium">${formatCurrency(totalPayments)}</td>
+                                    <td className="text-right font-medium">${formatCurrency(totalPayments)}</td>
                                 </tr>
                                 <tr>
                                     <td className="pr-4">Total Interest:</td>
-                                    <td className="font-medium">${formatCurrency(totalInterest)}</td>
+                                    <td className="text-right font-medium">${formatCurrency(totalInterest)}</td>
                                 </tr>
                                 <tr>
                                     <td className="pr-4">Payoff Date:</td>
-                                    <td className="font-medium">{payoffDateStr}</td>
+                                    <td className="text-right font-medium">{payoffDateStr}</td>
                                 </tr>
                             </tbody>
                         </table>

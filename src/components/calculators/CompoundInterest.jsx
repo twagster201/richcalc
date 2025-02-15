@@ -99,15 +99,15 @@ const CompoundInterest = () => {
                             <tbody>
                                 <tr>
                                     <td className="pr-4">Final Balance:</td>
-                                    <td className="font-medium">${formatCurrency(finalBalance)}</td>
+                                    <td className="text-right font-medium">${formatCurrency(finalBalance)}</td>
                                 </tr>
                                 <tr>
                                     <td className="pr-4">Total Contributions:</td>
-                                    <td className="font-medium">${formatCurrency(totalContributions)}</td>
+                                    <td className="text-right font-medium">${formatCurrency(totalContributions)}</td>
                                 </tr>
                                 <tr>
                                     <td className="pr-4">Total Interest Earned:</td>
-                                    <td className="font-medium">${formatCurrency(totalInterest)}</td>
+                                    <td className="text-right font-medium">${formatCurrency(totalInterest)}</td>
                                 </tr>
                             </tbody>
                         </table>
