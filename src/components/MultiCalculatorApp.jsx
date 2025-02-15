@@ -45,7 +45,7 @@ export default function MultiCalculatorApp() {
                             >
                                 <h2 className="text-xl font-semibold mb-2">Financial Calculators</h2>
                                 <p className="text-sm text-gray-600">
-                                    Estimate mortgage payments or project your investment growth with compound interest.
+                                    Estimate mortgage and loan payments or project your investment growth with compound interest.
                                 </p>
                             </div>
                         </div>

@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\parki\\source\\repos\\multicalc2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parki\\source\\repos\\multicalc2\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\MultiCalculatorApp.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\MultiCalculatorApp.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\FinancialCalculators.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\FinancialCalculators.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\calculators\\PaymentCalculator.jsx||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\calculators\\PaymentCalculator.jsx||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\HealthCalculators.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\HealthCalculators.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,24 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\parki\\source\\repos\\multicalc2\\index.html",
-              "RelativeDocumentMoniker": "index.html",
-              "ToolTip": "C:\\Users\\parki\\source\\repos\\multicalc2\\index.html",
-              "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-14T21:18:43.891Z",
+              "DocumentIndex": 1,
+              "Title": "FinancialCalculators.jsx",
+              "DocumentMoniker": "C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\FinancialCalculators.jsx",
+              "RelativeDocumentMoniker": "src\\components\\FinancialCalculators.jsx",
+              "ToolTip": "C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\FinancialCalculators.jsx",
+              "RelativeToolTip": "src\\components\\FinancialCalculators.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-02-15T12:04:31.447Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaymentCalculator.jsx",
+              "DocumentMoniker": "C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\calculators\\PaymentCalculator.jsx",
+              "RelativeDocumentMoniker": "src\\components\\calculators\\PaymentCalculator.jsx",
+              "ToolTip": "C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\calculators\\PaymentCalculator.jsx",
+              "RelativeToolTip": "src\\components\\calculators\\PaymentCalculator.jsx",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAAPwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-02-15T12:02:16.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HealthCalculators.jsx",
+              "DocumentMoniker": "C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\HealthCalculators.jsx",
+              "RelativeDocumentMoniker": "src\\components\\HealthCalculators.jsx",
+              "ToolTip": "C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\HealthCalculators.jsx",
+              "RelativeToolTip": "src\\components\\HealthCalculators.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-02-15T11:43:15.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MultiCalculatorApp.jsx",
+              "DocumentMoniker": "C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\MultiCalculatorApp.jsx",
+              "RelativeDocumentMoniker": "src\\components\\MultiCalculatorApp.jsx",
+              "ToolTip": "C:\\Users\\parki\\source\\repos\\multicalc2\\src\\components\\MultiCalculatorApp.jsx",
+              "RelativeToolTip": "src\\components\\MultiCalculatorApp.jsx",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwC8AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-02-15T11:41:22.731Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import Mortgage from './calculators/Mortgage';
 import CompoundInterest from './calculators/CompoundInterest';
+import PaymentCalculator from './calculators/PaymentCalculator';
 
 /**
  * Props:
@@ -10,23 +11,27 @@ import CompoundInterest from './calculators/CompoundInterest';
 export default function FinancialCalculators({ onBackToMain }) {
     /**
      * selectedCalc: which specific calculator is active.
-     *  '' => Show card grid [Mortgage, Compound Interest]
+     *  '' => Show the card grid [Mortgage, Compound Interest, Payment Calculator]
      *  'mortgage' => Show <Mortgage />
      *  'interest' => Show <CompoundInterest />
+     *  'payment' => Show <PaymentCalculator />
      */
     const [selectedCalc, setSelectedCalc] = useState('');
 
-    const renderCalculator = () => {
+    function renderCalculator() {
         if (selectedCalc === 'mortgage') return <Mortgage />;
         if (selectedCalc === 'interest') return <CompoundInterest />;
+        if (selectedCalc === 'payment') return <PaymentCalculator />;
         return null;
-    };
+    }
 
-    // Similar single Back button logic
+    // Single "Back" button logic
     const handleBack = () => {
         if (selectedCalc) {
+            // If a specific calculator is active, go back to the card grid
             setSelectedCalc('');
         } else {
+            // If we're already on the card grid, go back to main
             onBackToMain();
         }
     };
@@ -41,7 +46,7 @@ export default function FinancialCalculators({ onBackToMain }) {
             </div>
 
             {selectedCalc === '' && (
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-3 gap-6">
                     {/* Mortgage card */}
                     <div
                         onClick={() => setSelectedCalc('mortgage')}
@@ -63,13 +68,22 @@ export default function FinancialCalculators({ onBackToMain }) {
                             Project investment growth with compound interest over time.
                         </p>
                     </div>
+
+                    {/* Payment Calculator card */}
+                    <div
+                        onClick={() => setSelectedCalc('payment')}
+                        className="cursor-pointer bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow p-6"
+                    >
+                        <h3 className="text-lg font-semibold mb-2">Payment Calculator</h3>
+                        <p className="text-sm text-gray-600">
+                            Calculate monthly payments or time to pay off a fixed interest loan.
+                        </p>
+                    </div>
                 </div>
             )}
 
             {selectedCalc !== '' && (
-                <div className="mt-4">
-                    {renderCalculator()}
-                </div>
+                <div className="mt-4">{renderCalculator()}</div>
             )}
         </div>
     );
