@@ -5,74 +5,78 @@ import HealthCalculators from './HealthCalculators';
 import FinancialCalculators from './FinancialCalculators';
 
 export default function MultiCalculatorApp() {
-    /**
-     * activeGroup can be:
-     * '' (empty string) => Show top-level card grid (Health/Financial)
-     * 'health' => Show HealthCalculators
-     * 'financial' => Show FinancialCalculators
-     */
     const [activeGroup, setActiveGroup] = useState('');
 
     return (
         <div className="flex flex-col min-h-screen">
-            {/* MAIN CONTENT AREA */}
+            {/* Gradient background using built-in Tailwind classes */}
             <motion.main
-                className="flex-grow flex items-center justify-center p-4 bg-gray-100"
+                className="flex-grow flex items-center justify-center p-4 
+                   bg-gradient-to-r from-slate-300 to-slate-100"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <Card className="max-w-4xl w-full shadow-xl rounded-2xl overflow-hidden">
-                    <CardContent className="p-6 md:p-8">
-                        <h1 className="text-2xl font-bold mb-3">PlentiCalc</h1>
-                        <p className="text-sm text-gray-600 mb-6">
-                            Welcome to PlentiCalc! Choose either Health or Financial
-                            to explore a plentiful variety of calculators, all in one place.
-                        </p>
+                {/* Slightly transparent or white card */}
+                <div className="max-w-4xl w-full">
+                    <div className="bg-white/80 rounded-2xl shadow-2xl backdrop-blur-sm overflow-hidden">
+                        <div className="p-6 md:p-8">
+                            <h1 className="text-3xl font-bold mb-3 text-slate-900">
+                                PlentiCalc
+                            </h1>
+                            <p className="text-sm text-slate-700 mb-6">
+                                Welcome to PlentiCalc! Choose either Health or Financial to explore a plentiful variety of calculators, all in one place.
+                            </p>
 
-                        {/* TOP-LEVEL CARD GRID */}
-                        {activeGroup === '' && (
-                            <div className="grid md:grid-cols-2 gap-6">
-                                {/* Health Card */}
-                                <div
-                                    onClick={() => setActiveGroup('health')}
-                                    className="cursor-pointer bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow p-6"
-                                >
-                                    <h2 className="text-xl font-semibold mb-2">Health Calculators</h2>
-                                    <p className="text-sm text-gray-600">
-                                        Access BMI, BMR, and Body Fat calculators to track and estimate your health metrics.
-                                    </p>
+                            {activeGroup === '' && (
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    {/* Health Card */}
+                                    <div
+                                        onClick={() => setActiveGroup('health')}
+                                        className="cursor-pointer bg-gray-100 hover:bg-sky-100 transition
+                               text-gray-800 rounded-lg shadow-lg transition-shadow p-6 hover:shadow-xl"
+                                    >
+                                        <h2 className="text-xl font-semibold mb-2">
+                                            Health Calculators
+                                        </h2>
+                                        <p className="text-sm">
+                                            Access BMI, BMR, and Body Fat calculators to track
+                                            and estimate your health metrics.
+                                        </p>
+                                    </div>
+                                    {/* Financial Card */}
+                                    <div
+                                        onClick={() => setActiveGroup('financial')}
+                                        className="cursor-pointer bg-gray-100 hover:bg-sky-100 transition
+                               text-gray-800 rounded-lg shadow-lg transition-shadow p-6 hover:shadow-xl"
+                                    >
+                                        <h2 className="text-xl font-semibold mb-2">
+                                            Financial Calculators
+                                        </h2>
+                                        <p className="text-sm">
+                                            Estimate mortgage payments, compound interest, or
+                                            fixed-term loans.
+                                        </p>
+                                    </div>
                                 </div>
+                            )}
 
-                                {/* Financial Card */}
-                                <div
-                                    onClick={() => setActiveGroup('financial')}
-                                    className="cursor-pointer bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow p-6"
-                                >
-                                    <h2 className="text-xl font-semibold mb-2">Financial Calculators</h2>
-                                    <p className="text-sm text-gray-600">
-                                        Estimate mortgage payments, compound interest, and more.
-                                    </p>
-                                </div>
-                            </div>
-                        )}
-
-                        {/* IF A GROUP IS SELECTED, RENDER ITS SUB-CALCULATORS */}
-                        {activeGroup === 'health' && (
-                            <HealthCalculators onBackToMain={() => setActiveGroup('')} />
-                        )}
-                        {activeGroup === 'financial' && (
-                            <FinancialCalculators onBackToMain={() => setActiveGroup('')} />
-                        )}
-                    </CardContent>
-                </Card>
+                            {activeGroup === 'health' && (
+                                <HealthCalculators onBackToMain={() => setActiveGroup('')} />
+                            )}
+                            {activeGroup === 'financial' && (
+                                <FinancialCalculators onBackToMain={() => setActiveGroup('')} />
+                            )}
+                        </div>
+                    </div>
+                </div>
             </motion.main>
 
-            {/* FOOTER WITH DISCLAIMER */}
-            <footer className="text-center text-xs text-gray-500 p-2 bg-white">
+            <footer className="text-center text-xs text-slate-500 p-2 bg-white">
                 This website does not collect or store any personal data and does not
                 use cookies or tracking technologies.
             </footer>
         </div>
     );
 }
+

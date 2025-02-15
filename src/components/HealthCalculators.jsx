@@ -52,7 +52,8 @@ export default function HealthCalculators({ onBackToMain }) {
                     {/* BMI card */}
                     <div
                         onClick={() => setSelectedCalc('bmi')}
-                        className="cursor-pointer bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow p-6"
+                        className="cursor-pointer bg-gray-100 hover:bg-sky-100 transition
+                               text-gray-800 rounded-lg shadow-lg transition-shadow p-6 hover:shadow-xl"
                     >
                         <h3 className="text-lg font-semibold mb-2">BMI Calculator</h3>
                         <p className="text-sm text-gray-600">
@@ -63,7 +64,8 @@ export default function HealthCalculators({ onBackToMain }) {
                     {/* BMR card */}
                     <div
                         onClick={() => setSelectedCalc('bmr')}
-                        className="cursor-pointer bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow p-6"
+                        className="cursor-pointer bg-gray-100 hover:bg-sky-100 transition
+                               text-gray-800 rounded-lg shadow-lg transition-shadow p-6 hover:shadow-xl"
                     >
                         <h3 className="text-lg font-semibold mb-2">BMR Calculator</h3>
                         <p className="text-sm text-gray-600">
@@ -74,7 +76,8 @@ export default function HealthCalculators({ onBackToMain }) {
                     {/* Body Fat card */}
                     <div
                         onClick={() => setSelectedCalc('bodyFat')}
-                        className="cursor-pointer bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow p-6"
+                        className="cursor-pointer bg-gray-100 hover:bg-sky-100 transition
+                               text-gray-800 rounded-lg shadow-lg transition-shadow p-6 hover:shadow-xl"
                     >
                         <h3 className="text-lg font-semibold mb-2">Body Fat Calculator</h3>
                         <p className="text-sm text-gray-600">

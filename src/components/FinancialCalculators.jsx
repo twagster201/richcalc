@@ -50,7 +50,8 @@ export default function FinancialCalculators({ onBackToMain }) {
                     {/* Mortgage card */}
                     <div
                         onClick={() => setSelectedCalc('mortgage')}
-                        className="cursor-pointer bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow p-6"
+                        className="cursor-pointer bg-gray-100 hover:bg-sky-100 transition
+                               text-gray-800 rounded-lg shadow-lg transition-shadow p-6 hover:shadow-xl"
                     >
                         <h3 className="text-lg font-semibold mb-2">Mortgage Calculator</h3>
                         <p className="text-sm text-gray-600">
@@ -61,7 +62,8 @@ export default function FinancialCalculators({ onBackToMain }) {
                     {/* Compound Interest card */}
                     <div
                         onClick={() => setSelectedCalc('interest')}
-                        className="cursor-pointer bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow p-6"
+                        className="cursor-pointer bg-gray-100 hover:bg-sky-100 transition
+                               text-gray-800 rounded-lg shadow-lg transition-shadow p-6 hover:shadow-xl"
                     >
                         <h3 className="text-lg font-semibold mb-2">Compound Interest</h3>
                         <p className="text-sm text-gray-600">
@@ -72,7 +74,8 @@ export default function FinancialCalculators({ onBackToMain }) {
                     {/* Payment Calculator card */}
                     <div
                         onClick={() => setSelectedCalc('payment')}
-                        className="cursor-pointer bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow p-6"
+                        className="cursor-pointer bg-gray-100 hover:bg-sky-100 transition
+                               text-gray-800 rounded-lg shadow-lg transition-shadow p-6 hover:shadow-xl"
                     >
                         <h3 className="text-lg font-semibold mb-2">Payment Calculator</h3>
                         <p className="text-sm text-gray-600">
