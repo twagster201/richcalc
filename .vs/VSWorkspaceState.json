@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\public",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\calculators"
   ],
-  "SelectedNode": "\\index.html",
+  "SelectedNode": "\\public\\faq.html",
   "PreviewInSolutionExplorer": false
 }
