@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import Mortgage from './calculators/Mortgage';
 import CompoundInterest from './calculators/CompoundInterest';
 import PaymentCalculator from './calculators/PaymentCalculator';
+import CarLoan from './calculators/CarLoan'
 
 /**
  * Props:
@@ -22,6 +23,7 @@ export default function FinancialCalculators({ onBackToMain }) {
         if (selectedCalc === 'mortgage') return <Mortgage />;
         if (selectedCalc === 'interest') return <CompoundInterest />;
         if (selectedCalc === 'payment') return <PaymentCalculator />;
+        if (selectedCalc === 'carloan') return <CarLoan />;
         return null;
     }
 
@@ -80,6 +82,17 @@ export default function FinancialCalculators({ onBackToMain }) {
                         <h3 className="text-lg font-semibold mb-2">Payment Calculator</h3>
                         <p className="text-sm text-gray-600">
                             Calculate monthly payments or time to pay off a fixed interest loan.
+                        </p>
+                    </div>
+                    {/* Car Loan Calculator */}
+                    <div
+                        onClick={() => setSelectedCalc('carloan')}
+                        className="cursor-pointer bg-gray-100 hover:bg-sky-100 transition
+                               text-gray-800 rounded-lg shadow-lg transition-shadow p-6 hover:shadow-xl"
+                    >
+                        <h3 className="text-lg font-semibold mb-2">Car Loan Calculator</h3>
+                        <p className="text-sm text-gray-600">
+                            Estimate monthly payments for a car loan with optional deposit and balloon.
                         </p>
                     </div>
                 </div>

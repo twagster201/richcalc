@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import BMI from './calculators/BMI';
 import BMR from './calculators/BMR';
 import BodyFat from './calculators/BodyFat';
+import StepsToCalories from './calculators/StepsToCalories';
 
 /**
  * Props:
@@ -24,6 +25,7 @@ export default function HealthCalculators({ onBackToMain }) {
         if (selectedCalc === 'bmi') return <BMI />;
         if (selectedCalc === 'bmr') return <BMR />;
         if (selectedCalc === 'bodyFat') return <BodyFat />;
+        if (selectedCalc === 'steps') return <StepsToCalories />
         return null;
     }
 
@@ -82,6 +84,16 @@ export default function HealthCalculators({ onBackToMain }) {
                         <h3 className="text-lg font-semibold mb-2">Body Fat Calculator</h3>
                         <p className="text-sm text-gray-600">
                             Estimate total body fat using the U.S. Navy formula.
+                        </p>
+                    </div>
+                    <div
+                        onClick={() => setSelectedCalc('steps')}
+                        className="cursor-pointer bg-gray-100 hover:bg-sky-100 transition
+                               text-gray-800 rounded-lg shadow-lg transition-shadow p-6 hover:shadow-xl"
+                    >
+                        <h3 className="text-lg font-semibold mb-2">Steps to Calories</h3>
+                        <p className="text-sm text-gray-600">
+                            Estimate how many steps you walk and approximate calories burned.
                         </p>
                     </div>
                 </div>

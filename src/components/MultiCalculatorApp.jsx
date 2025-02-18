@@ -40,7 +40,7 @@ export default function MultiCalculatorApp() {
                                             Health Calculators
                                         </h2>
                                         <p className="text-sm">
-                                            Access BMI, BMR, and Body Fat calculators to track
+                                            Access BMI, BMR, Body Fat and Steps to Calories calculators to track
                                             and estimate your health metrics.
                                         </p>
                                     </div>
@@ -54,7 +54,7 @@ export default function MultiCalculatorApp() {
                                             Financial Calculators
                                         </h2>
                                         <p className="text-sm">
-                                            Estimate mortgage payments, compound interest, or
+                                            Estimate mortgage payments, compound interest, carloans or
                                             fixed-term loans.
                                         </p>
                                     </div>
