@@ -22,6 +22,7 @@ function a(
 export const ECONOMIC: AssumptionSet = Object.fromEntries(
   [
     a('infl.start', {
+      phrase: 'inflation over the next year',
       label: 'Inflation over the next 12 months',
       value: 0.036,
       unit: 'percent',
@@ -35,6 +36,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'Where the simulated inflation path starts. It then fades towards the long-run rate.',
     }),
     a('infl.longRun', {
+      phrase: 'long-run inflation',
       label: 'Long-run inflation',
       value: 0.02,
       unit: 'percent',
@@ -48,6 +50,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'The rate inflation drifts back towards in the simulations. Results are shown in today’s money using each simulated path.',
     }),
     a('infl.fade', {
+      phrase: 'how fast inflation settles',
       label: 'How quickly inflation returns to its long-run rate',
       value: 0.5,
       unit: 'ratio',
@@ -61,6 +64,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'Share of the gap between the central inflation path and its long-run rate that remains after each year.',
     }),
     a('infl.vol', {
+      phrase: 'the size of inflation surprises',
       label: 'Inflation surprise size (1 standard deviation per year)',
       value: 0.012,
       unit: 'pp',
@@ -74,6 +78,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'How far actual inflation typically strays from the central path in a year.',
     }),
     a('infl.persistence', {
+      phrase: 'how long inflation surprises last',
       label: 'Inflation surprise persistence',
       value: 0.6,
       unit: 'ratio',
@@ -87,6 +92,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'Share of this year’s inflation surprise that carries into next year.',
     }),
     a('rate.start', {
+      phrase: 'Bank Rate today',
       label: 'Bank Rate today',
       value: 0.0375,
       unit: 'percent',
@@ -100,6 +106,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'The Bank of England’s policy rate at the start of the simulation.',
     }),
     a('rate.longRunReal', {
+      phrase: 'the long-run gap between Bank Rate and inflation',
       label: 'Long-run Bank Rate above inflation',
       value: 0.0125,
       unit: 'pp',
@@ -113,6 +120,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'Simulated Bank Rate drifts towards long-run inflation plus this margin. Future mortgage and cash rates follow it.',
     }),
     a('rate.persistence', {
+      phrase: 'how slowly interest rates move',
       label: 'Interest rate persistence',
       value: 0.75,
       unit: 'ratio',
@@ -126,6 +134,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'How slowly Bank Rate returns to its long-run level after a move.',
     }),
     a('rate.vol', {
+      phrase: 'the size of interest rate surprises',
       label: 'Interest rate surprise size (1 standard deviation per year)',
       value: 0.0075,
       unit: 'pp',
@@ -139,6 +148,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'How much Bank Rate can move unexpectedly in a year.',
     }),
     a('rate.inflationResponse', {
+      phrase: 'how strongly rates respond to inflation',
       label: 'Rate response to an inflation surprise',
       value: 0.5,
       unit: 'ratio',
@@ -152,6 +162,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'Points of extra Bank Rate per point of inflation surprise.',
     }),
     a('mort.spread', {
+      phrase: 'the gap between mortgage rates and Bank Rate',
       label: 'Mortgage rate above Bank Rate',
       value: 0.0085,
       unit: 'pp',
@@ -165,6 +176,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'When your fix ends, the new rate is simulated Bank Rate plus this margin.',
     }),
     a('mort.refixYears', {
+      phrase: 'the length of each new fixed deal',
       label: 'Length of each new fixed-rate deal',
       value: 5,
       unit: 'years',
@@ -178,6 +190,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'After your current deal ends, you remortgage onto a new fix of this length each time.',
     }),
     a('mort.overpayAllowance', {
+      phrase: 'the yearly overpayment allowance',
       label: 'Overpayment allowed each year without early repayment charges',
       value: 0.1,
       unit: 'percent',
@@ -191,6 +204,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'Overpayments above this share of the balance in a year are not made; the extra money is invested instead.',
     }),
     a('eq.return', {
+      phrase: 'average share returns after inflation',
       label: 'Shares: long-run yearly return after inflation',
       value: 0.05,
       unit: 'percent',
@@ -204,6 +218,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'The typical compound growth rate of a global share fund before fees, after inflation. Individual years vary widely around it.',
     }),
     a('eq.vol', {
+      phrase: 'share price volatility',
       label: 'Shares: volatility (1 standard deviation per year)',
       value: 0.17,
       unit: 'percent',
@@ -217,6 +232,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'How much share returns typically swing from year to year.',
     }),
     a('bond.return', {
+      phrase: 'average bond returns after inflation',
       label: 'Bonds: long-run yearly return after inflation',
       value: 0.015,
       unit: 'percent',
@@ -230,6 +246,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'The typical compound real growth rate of a bond fund before fees.',
     }),
     a('bond.vol', {
+      phrase: 'bond price volatility',
       label: 'Bonds: volatility (1 standard deviation per year)',
       value: 0.08,
       unit: 'percent',
@@ -243,6 +260,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'How much bond returns typically swing from year to year.',
     }),
     a('fees', {
+      phrase: 'investment fees',
       label: 'Investment fees (fund + platform), per year',
       value: 0.004,
       unit: 'percent',
@@ -256,6 +274,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'Taken off investment returns every year.',
     }),
     a('cash.spread', {
+      phrase: 'the gap between cash ISA rates and Bank Rate',
       label: 'Cash ISA rate above Bank Rate',
       value: 0,
       unit: 'pp',
@@ -269,6 +288,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       explain: 'The cash ISA interest rate is simulated Bank Rate plus this margin.',
     }),
     a('gia.dividendYield', {
+      phrase: 'the dividend yield',
       label: 'Dividend yield on shares held outside an ISA',
       value: 0.02,
       unit: 'percent',
@@ -304,9 +324,9 @@ export const EQUITY_TAIL_DF = 5;
 
 /** Portfolio mixes offered for stocks and shares ISAs (share of equities; the rest is bonds). */
 export const RISK_MIXES = {
-  cautious: { equity: 0.4, label: 'Cautious (40% shares, 60% bonds)' },
-  balanced: { equity: 0.6, label: 'Balanced (60% shares, 40% bonds)' },
-  adventurous: { equity: 0.8, label: 'Adventurous (80% shares, 20% bonds)' },
-  allEquity: { equity: 1, label: 'All shares (100%)' },
+  cautious: { equity: 0.4, label: 'Cautious: 40% shares' },
+  balanced: { equity: 0.6, label: 'Balanced: 60% shares' },
+  adventurous: { equity: 0.8, label: 'Adventurous: 80% shares' },
+  allEquity: { equity: 1, label: 'All shares: 100%' },
 } as const;
 export type RiskLevel = keyof typeof RISK_MIXES;

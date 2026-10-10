@@ -4,10 +4,12 @@
   "private": true,
   "type": "module",
   "description": "UK personal-finance decision tools built around honest uncertainty.",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsx scripts/prerender.ts && tsx scripts/check-size.ts",
+    "build": "vite build && vite build --ssr src/ssr.tsx --outDir dist-ssr && tsx scripts/prerender.ts && tsx scripts/check-size.ts",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p engine/tsconfig.json",
     "lint": "eslint .",
@@ -19,7 +21,6 @@
     "check": "npm run typecheck && npm run lint && npm run test && npm run check:rules"
   },
   "dependencies": {
-    "@preact/signals": "2.11.3",
     "preact": "10.29.8"
   },
   "devDependencies": {

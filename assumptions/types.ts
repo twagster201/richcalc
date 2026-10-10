@@ -15,6 +15,8 @@ export interface Assumption extends Sourced<number> {
   range: { low: number; high: number };
   /** Hard limits for inputs and for flip-point searches. */
   bounds: { min: number; max: number };
+  /** Short noun phrase for use inside sentences, e.g. "average share returns after inflation". */
+  phrase: string;
   /** What this is, in plain English, for the assumptions panel. */
   explain: string;
   /** Step for the input control, in display units. */
