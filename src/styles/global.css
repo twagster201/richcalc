@@ -192,6 +192,7 @@ button, input, select { font: inherit; color: inherit; }
 .btn {
   display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px;
   border-radius: 10px; border: 1px solid var(--line-2); background: var(--surface); cursor: pointer;
+  color: var(--ink); text-decoration: none; font-weight: 550;
 }
 .btn:hover { border-color: var(--ink-3); }
 .btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }

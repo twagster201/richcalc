@@ -53,6 +53,7 @@ export function Home({ example }: { example: MortgageVsIsaSummary }) {
             <FanChart
               id="home-fan"
               interactive={false}
+              initialWidth={440}
               data={example.diff}
               aboveLabel="Investing ahead"
               belowLabel="Overpaying ahead"

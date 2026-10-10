@@ -21,13 +21,15 @@ export interface FanChartProps {
   probabilityLabel: string;
   /** Set false for a static illustration with no keyboard or pointer interaction. */
   interactive?: boolean;
+  /** Width to draw at before the browser measures (or for static pages that never do). */
+  initialWidth?: number;
 }
 
 const H = 320;
 const M = { top: 16, right: 16, bottom: 34, left: 56 };
 
-export function FanChart({ id, data, aboveLabel, belowLabel, selectedYear, onSelectYear, summary, probabilityLabel, interactive = true }: FanChartProps) {
-  const [ref, width] = useWidth<HTMLDivElement>();
+export function FanChart({ id, data, aboveLabel, belowLabel, selectedYear, onSelectYear, summary, probabilityLabel, interactive = true, initialWidth = 720 }: FanChartProps) {
+  const [ref, width] = useWidth<HTMLDivElement>(initialWidth);
   const [hover, setHover] = useState<number | null>(null);
 
   // Start the fan from a single point: at year 0 both options are identical.
