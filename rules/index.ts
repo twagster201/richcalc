@@ -35,7 +35,7 @@ export function rulesFor(date: string): RuleSet {
   const key = `${base.id}|${changes.length}`;
   const hit = cache.get(key);
   if (hit) return hit;
-  const resolved = structuredClone(base);
+  const resolved: RuleSet = JSON.parse(JSON.stringify(base)); // rule sets are plain data
   for (const c of changes) c.apply(resolved);
   cache.set(key, resolved);
   return resolved;
