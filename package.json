@@ -1,0 +1,41 @@
+{
+  "name": "richcalc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "UK personal-finance decision tools built around honest uncertainty.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsx scripts/prerender.ts && tsx scripts/check-size.ts",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p engine/tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "docs": "tsx scripts/gen-docs.ts",
+    "check:rules": "tsx scripts/check-rules.ts",
+    "check": "npm run typecheck && npm run lint && npm run test && npm run check:rules"
+  },
+  "dependencies": {
+    "@preact/signals": "2.11.3",
+    "preact": "10.29.8"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.64.0",
+    "@preact/preset-vite": "2.10.6",
+    "@types/node": "26.6.5",
+    "eslint": "10.12.0",
+    "fast-check": "4.10.2",
+    "globals": "17.13.0",
+    "preact-render-to-string": "6.8.0",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.1",
+    "vite": "8.3.4",
+    "vitest": "5.0.3"
+  }
+}
