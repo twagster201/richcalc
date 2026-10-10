@@ -74,7 +74,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       step: 0.1,
       sources: ['richcalc-judgement'],
       status: 'judgement',
-      note: 'About two-thirds of years land within ±1.2 points of the central path. This reflects UK CPI since 1997, including the 2022 spike; a formal fit to ONS series D7G7 is pending (see ASSUMPTIONS.md).',
+      note: 'About two-thirds of years land within ±1.2 points of the central path, and occasional futures see spikes like 2022. This is our judgement of a plausible spread; a formal fit to ONS CPI (series D7G7) is pending.',
       explain: 'How far actual inflation typically strays from the central path in a year.',
     }),
     a('infl.persistence', {
@@ -144,7 +144,7 @@ export const ECONOMIC: AssumptionSet = Object.fromEntries(
       step: 0.05,
       sources: ['richcalc-judgement'],
       status: 'judgement',
-      note: 'Typical yearly surprise of ±0.75 points, on top of the response to inflation. Wide enough to include 2022-style rises in roughly 1 in 20 futures. Pending formal calibration.',
+      note: 'A typical yearly surprise of ±0.75 points, on top of the response to inflation, so some futures see sharp rises. Our judgement, pending a formal fit to Bank Rate history.',
       explain: 'How much Bank Rate can move unexpectedly in a year.',
     }),
     a('rate.inflationResponse', {

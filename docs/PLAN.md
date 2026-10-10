@@ -1,6 +1,6 @@
 # RichCalc v1 plan
 
-Status: **proposal, awaiting approval**. Nothing is built yet.
+Status: **approved 10 October 2026.** Steps 2 (engine and rules) and 3 (mortgage vs ISA) are built. See “Changes during the build” at the end.
 Drafted 10 October 2026.
 
 ---
@@ -369,3 +369,24 @@ Spot-checked while drafting this plan. Everything will be fully re-verified agai
 2. **Engine and rules:** scaffold (Vite, Preact, TS, lint, Vitest, CI), PRNG and statistics, the tax modules (income tax, NI, student loan, HICBC, childcare, property tax, ISA), the ESG, mortgage and portfolio models, sensitivity and flip points, `rules/2026-27.ts` fully sourced, generated SOURCES.md and ASSUMPTIONS.md, and the README.
 3. **Tool 1 end to end:** UI shell, design system, the chart components, the worker, URL state, the assumptions panel, sensitivity, the how-it-works page. I'll stop here for your review.
 4. **Tools 2, 3 and 4**, reusing the components, then a full accessibility and performance pass, and deployment once the host is known.
+
+---
+
+## 14. Answers and changes during the build
+
+**Answers to the questions in §12:** build now and update after the Autumn Budget; brand is “RichCalc”, modern; cookie-free page counts (Netlify Web Analytics, which uses server logs and needs no code); long-run historical returns as the default; hosting on Netlify.
+
+**Changes from the plan, and why:**
+
+- **Bank Rate's long run is set as a margin above inflation** (`rate.longRunReal` = 1.25 points, from the BoE survey's 3.25% less the 2% target), not as a fixed nominal level. Otherwise, changing long-run inflation on its own produced negative real rates and misleading sensitivity results.
+- **Overpayers keep their monthly payment at each remortgage** and take a shorter term. The first version recalculated the payment over the original term, which wrongly pushed overpayments into the 10% allowance.
+- **Lower rates for a lower loan-to-value are not modelled.** We couldn't source the tier spreads, and inventing them would break the “no invented numbers” rule. This slightly understates the benefit of overpaying, and the page says so.
+- **Early repayment charges are never paid.** Overpayments stop at the allowance and the excess is invested.
+- **Preact signals were dropped** in favour of plain hooks, which saves about 2 kB.
+- **Body text uses the system UI font**, and only headings use self-hosted Fraunces. That keeps the font payload to 37 kB.
+- **The childcare engine modules move to tool 3.** The rules for every UK nation are already in the config.
+
+**Still to verify** (flagged in the UI and in ASSUMPTIONS.md):
+
+- The long-run equity and bond return and volatility figures (UBS / Dimson–Marsh–Staunton Yearbook).
+- A formal fit of the inflation and Bank Rate volatility and persistence parameters to ONS and BoE data. Our research environment couldn't download datasets (only web search worked), so these are labelled as judgement for now.
