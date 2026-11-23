@@ -4,6 +4,7 @@ import { useSettings } from '../lib/settings';
 import { CURRENCIES } from '../lib/settings-data';
 import { CALCULATORS, CATEGORIES } from '../calculators/meta';
 import { Segmented, SelectField } from './ui';
+import ErrorBoundary from './ErrorBoundary';
 
 export function Logo({ className = '' }) {
   return (
@@ -160,11 +161,16 @@ function Footer() {
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  // Braces matter: newer browsers return a Promise from scrollTo, and React would treat
+  // a returned value as the effect's cleanup function and crash on the next navigation.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return null;
 }
 
 export default function Layout() {
+  const { pathname } = useLocation();
   return (
     <div className="relative flex min-h-screen flex-col overflow-x-clip">
       <ScrollToTop />
@@ -176,7 +182,9 @@ export default function Layout() {
       </a>
       <Header />
       <main id="main" className="relative mx-auto w-full max-w-6xl flex-1 px-4 pt-8">
-        <Outlet />
+        <ErrorBoundary resetKey={pathname}>
+          <Outlet />
+        </ErrorBoundary>
       </main>
       <Footer />
     </div>
