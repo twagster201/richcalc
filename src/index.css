@@ -2,10 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --ink: 30 27 75; /* deep indigo text */
+    --muted: 100 97 140;
+    --surface: 255 255 255;
+    --line: 231 225 245;
+    --page: #fff8f1;
+    /* default accent (violet) */
+    --accent: 139 92 246;
+    --accent-strong: 109 40 217;
+    --accent-soft: 237 233 254;
+    --accent-deep: 109 40 217;
+    color-scheme: light;
+  }
+  .dark {
+    --ink: 241 240 255;
+    --muted: 167 164 200;
+    --surface: 30 27 58;
+    --line: 55 50 95;
+    --page: #13112b;
+    --accent-strong: 196 181 253;
+    --accent-soft: 46 16 101;
+    color-scheme: dark;
+  }
 
-body {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply font-sans text-ink antialiased;
+    background: var(--page);
+    min-height: 100vh;
+  }
+
+  /* Hide number spinners: they're tiny and easy to mis-click */
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-4 ring-accent/40;
+  }
+}
+
+/* Category accents. Outside @layer so Tailwind never purges them (class names are built dynamically). */
+.theme-money {
+  --accent: 16 185 129;
+  --accent-deep: 4 120 87;
+  --accent-strong: 4 120 87;
+  --accent-soft: 209 250 229;
+}
+.theme-health {
+  --accent: 236 72 153;
+  --accent-deep: 190 24 93;
+  --accent-strong: 190 24 93;
+  --accent-soft: 252 231 243;
+}
+.theme-everyday {
+  --accent: 139 92 246;
+  --accent-deep: 109 40 217;
+  --accent-strong: 109 40 217;
+  --accent-soft: 237 233 254;
+}
+.dark .theme-money {
+  --accent-strong: 110 231 183;
+  --accent-soft: 6 78 59;
+}
+.dark .theme-health {
+  --accent-strong: 249 168 212;
+  --accent-soft: 80 7 36;
+}
+.dark .theme-everyday {
+  --accent-strong: 196 181 253;
+  --accent-soft: 46 16 101;
+}
+
+
+@layer components {
+  .card {
+    @apply rounded-3xl border border-line bg-surface shadow-soft;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-bold;
+  }
+  .blob {
+    @apply pointer-events-none absolute rounded-full blur-3xl opacity-50 dark:opacity-25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
