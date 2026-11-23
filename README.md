@@ -24,7 +24,7 @@ SITE_URL=https://your-domain.com npm run build   # also adds canonical URLs, sit
 | `src/lib/settings.jsx` | Currency, units and theme (auto-detected from the browser, saved in localStorage) plus `money()`, `number()`, `date()` formatters. |
 | `src/components/ui.jsx` | Shared inputs (money/percent/height/weight fields), result cards and layout. |
 | `src/components/charts.jsx` | Lightweight SVG charts: donut, area chart, band gauge. |
-| `scripts/prerender.mjs` | After build, writes `dist/<slug>/index.html` for every route with the right title/description. |
+| `scripts/prerender.mjs` | After build, writes `dist/<slug>.html` for every route with the right title/description. |
 
 ## Adding a calculator
 
@@ -37,6 +37,5 @@ It then appears automatically on the home page, category page, footer, search an
 
 ## Hosting
 
-The build is fully static. Every route has its own `index.html`, so it works on any static host (Netlify, Vercel,
-Cloudflare Pages, GitHub Pages at a root domain) without rewrite rules. `404.html` is generated for unknown URLs, and
-the old `/faq.html` link still works.
+Deployed on Netlify at https://richcalc2.netlify.app (settings in `netlify.toml`). The build is fully static: each route is
+written as `<slug>.html`, which Netlify serves at `/<slug>` with no redirect. `404.html` is generated for unknown URLs.

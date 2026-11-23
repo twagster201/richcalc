@@ -1,6 +1,6 @@
 // Runs after `vite build`. Writes a static HTML file for every route so that:
 //  - each calculator has its own <title>, description and readable content for search engines
-//  - deep links like /mortgage work on any static host (no server rewrites needed)
+//  - deep links like /mortgage work without rewrites (written as mortgage.html: Netlify serves it at /mortgage with no redirect)
 // Set SITE_URL (e.g. SITE_URL=https://richcalc.example npm run build) to also emit canonical URLs and sitemap.xml.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -58,7 +58,7 @@ for (const cat of CATEGORIES) {
   const calcs = CALCULATORS.filter((c) => c.category === cat.id);
   pages.push({
     path: `/${cat.id}`,
-    file: `${cat.id}/index.html`,
+    file: `${cat.id}.html`,
     title: `${cat.name} Calculators – ${SITE.name}`,
     description: cat.description,
     body: `<h1>${esc(cat.name)} calculators</h1><p>${esc(cat.description)}</p><ul>${calcs
@@ -71,7 +71,7 @@ for (const c of CALCULATORS) {
   const cat = CATEGORIES.find((x) => x.id === c.category);
   pages.push({
     path: `/${c.slug}`,
-    file: `${c.slug}/index.html`,
+    file: `${c.slug}.html`,
     title: `${c.title} – ${SITE.name}`,
     description: c.description,
     body: `<h1>${esc(c.title)}</h1><p>${esc(c.description)}</p><p>${link(`/${cat.id}`, `More ${cat.name.toLowerCase()} calculators`)}</p>`,
@@ -89,7 +89,7 @@ for (const c of CALCULATORS) {
 
 const faqPage = {
   path: '/faq',
-  file: 'faq/index.html',
+  file: 'faq.html',
   title: `FAQ & Privacy – ${SITE.name}`,
   description: 'Frequently asked questions about RichCalc: currencies, units, accuracy and privacy.',
   body: `<h1>Frequently asked questions</h1>${FAQS.map(([q, a]) => `<h2>${esc(q)}</h2><p>${esc(a)}</p>`).join('')}`,
@@ -102,9 +102,6 @@ const faqPage = {
 pages.push(faqPage);
 
 for (const p of pages) write(p.file, render(p));
-
-// Keep the old /faq.html URL working (previous site linked to it).
-write('faq.html', render(faqPage));
 
 // Fallback for unknown URLs on hosts that serve 404.html (GitHub Pages, Netlify, Cloudflare Pages...).
 write(
